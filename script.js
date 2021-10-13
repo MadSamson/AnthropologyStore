@@ -1,5 +1,6 @@
 const url = "https://mock-data-api.firebaseio.com/webb21/products.json"
 let total = 0
+
 filterByRating()
 
 function filterByRating(){
@@ -29,7 +30,7 @@ function filterByRating(){
                 div.appendChild(buyButton)
                 plist.appendChild(div)
 
-                // productImage.addEventListener("click", item =>{
+                // productImage.addEventListener("click", () =>{
                 //     totalPrice(product.price)
                 //     document.getElementById("total").innerHTML = `total: ${total}`
                 // })
