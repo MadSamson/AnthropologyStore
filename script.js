@@ -1,6 +1,6 @@
+const url = "https://mock-data-api.firebaseio.com/webb21/products.json"
 let total = 0
 
-const url = "https://mock-data-api.firebaseio.com/webb21/products.json"
 fetch(url)
 .then(response => response.json())
 .then(data => {
@@ -9,30 +9,52 @@ fetch(url)
 })
 
 function renderdata(products) {
+ 
     products.forEach(product => {
         const div = document.createElement("div")
         const productName = document.createElement("p")
-        const img = document.createElement("img")
-        const p = document.createElement("p")
-        img.src = product.images[0].src.small
-        img.alt = product.images[0].alt
-        productName.innerHTML = product.name
-        p.innerHTML = `${product.description} <br> Price: ${product.price} <br> Rating: ${product.rating} <br> Stock: ${product.stock}`
+        const productImage = document.createElement("img")
+        const productPrice = document.createElement("p")
+        const productRating = document.createElement("p")
+        const productStock = document.createElement("p")
+        const productDescription = document.createElement("p")
+        const buyButton = document.createElement("button")
 
+        productImage.src = product.images[0].src.small
+        productImage.alt = product.images[0].alt
+        productName.innerHTML = product.name
+        productDescription.innerHTML = product.description
+        productPrice.innerHTML = `Price: ${product.price} `
+        productRating.innerHTML = `Rating: ${product.rating}`
+        productStock.innerHTML = `Stock: ${product.stock}`
+        buyButton.innerText = "köp"
+        
         div.appendChild(productName)
-        div.appendChild(img)
-        div.appendChild(p)
+        div.appendChild(productImage)
+        div.appendChild(productDescription)
+        div.appendChild(productPrice)
+        div.appendChild(productRating)
+        div.appendChild(productStock)
+        div.appendChild(buyButton)
         document.body.appendChild(div)
 
-        img.addEventListener("click", item =>{
-            console.log("clicked");
-            console.log(item);
-            addToCart(product)
-            const totalPrice = document.getElementById("total").innerHTML = `total: ${total}`
+        buyButton.addEventListener("click", ()=>{
+            totalPrice(product.price)
+            addToCart(product.name, product.price)
         })
     })
 }
-function addToCart(item) {
-    total += item.price
-    console.log(total);
+
+
+function totalPrice(price){
+    console.log("clicked");
+    total += price
+    document.getElementById("total").innerHTML= `total: ${total}`
+}
+
+function addToCart(name, price) {
+    const parent = document.getElementById("cart")
+    const child = document.createElement("p")
+    child.innerHTML = `${name}: ${price}`
+    parent.appendChild(child)   
 }
