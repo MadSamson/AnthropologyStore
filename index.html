@@ -19,8 +19,14 @@
 <body>
     <h1 id="welcome">Welcome To My Anthropology Store</h1>
     <hr>
+    <div>
+        <label for="rating"></label>
+        <input type="text" id="rating">
+        <button onclick="filterByRating()">rate</button>
+    </div>
     <div><p id="total">total: 0</p></div>
     <div><p id="cart">cart</p></div>
+    <div id="filteredList"></div>
     <script src="script.js"></script>
 </body>
 </html>
