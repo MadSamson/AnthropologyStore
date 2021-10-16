@@ -1,0 +1,49 @@
+.input{
+    position: absolute;
+    right:10px;
+    top: 30px;
+}
+img {
+    width: 345px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.blabla {
+    color: #333;
+    width: 347px;
+    height: 520px;
+    text-align: left;
+    font-weight: bold;
+    margin: 5px;
+    border: 3px #fef solid;
+    background-color: rgb(172, 172, 172);
+    float: left;
+    padding: 10px;
+}
+/* #blabla:hover{
+    background-color: #eee;
+    border: 3px #fff solid;
+} */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
