@@ -21,10 +21,7 @@ img {
     float: left;
     padding: 10px;
 }
-/* #blabla:hover{
-    background-color: #eee;
-    border: 3px #fff solid;
-} */
+
 .tooltip {
     position: relative;
     display: inline-block;
