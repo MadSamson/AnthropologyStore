@@ -15,7 +15,7 @@ function renderContent (data){
     const plist = document.getElementById("pList")
     plist.innerHTML = ""
     data.filter(product=>{
-        if (product.rating>document.getElementById("filter").value) {
+        if (product.rating>=document.getElementById("filter").value) {
             const wrapper = document.createElement("div")
             wrapper.className = "blabla"
             wrapper.innerHTML= `
@@ -50,7 +50,6 @@ function renderContent (data){
 
             // productImage.addEventListener("click", () =>{
             //     totalPrice(product.price)
-            //     document.getElementById("total").innerHTML = `total: ${total}`
             // })
             
             buyButton.addEventListener("click", ()=>{
