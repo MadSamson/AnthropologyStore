@@ -50,6 +50,7 @@ function renderContent (data){
 
             // productImage.addEventListener("click", () =>{
             //     totalPrice(product.price)
+            //     addToCart(product.name, product.price)
             // })
             
             buyButton.addEventListener("click", ()=>{
