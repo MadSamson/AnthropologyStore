@@ -14,7 +14,7 @@ function getData(){
 function renderContent (data){
     const plist = document.getElementById("pList")
     plist.innerHTML = ""
-    data.filter(product=>{
+    data.forEach(product=>{
         if (product.rating>=document.getElementById("filter").value) {
             const wrapper = document.createElement("div")
             wrapper.className = "blabla"
@@ -71,5 +71,5 @@ function addToCart(name, price) {
     const parent = document.getElementById("cart")
     const child = document.createElement("p")
     child.innerHTML = `${name}: ${price}`
-    parent.appendChild(child)   
+    parent.appendChild(child)
 }
